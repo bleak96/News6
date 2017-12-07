@@ -1,6 +1,11 @@
 <resources>
+
     <string name="app_name">News</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_fragment_economics">Economics</string>
+    <string name="title_fragment_society">Society</string>
+    <string name="title_fragment_world">World</string>
+    <string name="title_fragment_culture">Culture</string>
+    <string name="title_fragment_accidents">Accidents</string>
+
 </resources>
