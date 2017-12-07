@@ -1,0 +1,44 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp">
+
+    <!-- я думал если информация будет загружаться то остальная
+    инфа будет падать вниз(Заголовок,картинка,текст,дата)-->
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            tools:text="NewsTittle" />
+        <ImageView
+            android:id="@+id/news_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/news_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="News description"/>
+
+
+        <TextView
+            android:id="@+id/news_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            tools:text="19:05" />
+
+
+    </LinearLayout>

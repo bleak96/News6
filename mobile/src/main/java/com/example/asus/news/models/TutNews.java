@@ -1,0 +1,59 @@
+package com.example.asus.news.models;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
+@Root(name = "item")
+public class TutNews {
+
+    @Element(name = "title")
+    private String title;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
+    @Element(name = "description")
+    private int description=NO_IMAGE_PROVIDED;
+
+    @Element(name = "link")
+    private String link;
+
+    @Element(name="pubDate")
+    private int pubDate;
+
+
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getDescription() {
+        return description;
+    }
+
+    public void setDescription(int description) {
+        this.description = description;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public int getPubDate() {
+        return pubDate;
+    }
+    public void setPubDate(int pubDate) {
+        this.pubDate=pubDate;
+    }
+    public boolean hasImage() {
+        return description != NO_IMAGE_PROVIDED;
+    }
+
+}
