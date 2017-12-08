@@ -12,30 +12,13 @@ import com.example.asus.news.models.TutNews;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+
     private String[] mNews;
-
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
-
-        public ViewHolder(View v) {
-            super(v);
-            // Define click listener for the ViewHolder's View.
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("CustomAdapter", "Element " + getAdapterPosition() + " clicked.");
-                }
-            });
-            textView = (TextView) v.findViewById(R.id.recycler_view);
-        }
-
-        public TextView getTextView() {
-            return textView;
-        }
-    }
 
     public CustomAdapter(String[] news) {
         mNews = news;
@@ -43,17 +26,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view.
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.list_item, viewGroup, false);
-
-        return new ViewHolder(v);
+        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false));
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Log.d("Custom adapter", "Element " + position + " set.");
-        viewHolder.getTextView().setText(mNews[position]);
+        viewHolder.textView.setText(mNews[position]);
     }
 
     @Override
@@ -61,5 +40,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return mNews.length;
     }
 
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.recycler_view)
+        TextView textView;
+
+        ViewHolder(View v) {
+            super(v);
+            ButterKnife.bind(this, v);
+        }
+    }
 }
