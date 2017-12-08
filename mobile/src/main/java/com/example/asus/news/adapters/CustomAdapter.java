@@ -1,28 +1,46 @@
 package com.example.asus.news.adapters;
 
+import android.content.Context;
+import android.graphics.Movie;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutNews;
+
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+    private ArrayList<TutNews> newsList;
 
-    private String[] mNews;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.news_title) TextView title;
+        @BindView(R.id.news_description) TextView description;
+        @BindView(R.id.news_link) TextView link;
+        @BindView(R.id.news_date) TextView date;
+//        TextView title, description, link, date;
 
-    public CustomAdapter(String[] news) {
-        mNews = news;
+        ViewHolder(View v) {
+            super(v);
+//            title = (TextView) v.findViewById(R.id.news_title);
+//            description = (TextView) v.findViewById(R.id.news_description);
+//            link = (TextView) v.findViewById(R.id.news_link);
+//            date = (TextView) v.findViewById(R.id.news_date);
+        }
     }
+
+    public CustomAdapter(ArrayList<TutNews> newsList) {
+        this.newsList = newsList;
+    }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -31,23 +49,33 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        Log.d("Custom adapter", "Element " + position + " set.");
-        viewHolder.textView.setText(mNews[position]);
+
+        TutNews news = newsList.get(position);
+        viewHolder.title.setText(news.getTitle());
+        viewHolder.description.setText(news.getDescription());
+        viewHolder.link.setText(news.getLink());
+        viewHolder.date.setText(news.getPubDate());
     }
 
     @Override
     public int getItemCount() {
-        return mNews.length;
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.recycler_view)
-        TextView textView;
-
-        ViewHolder(View v) {
-            super(v);
-            ButterKnife.bind(this, v);
-        }
+        return newsList.size();
     }
 }
+//
+//   @Override
+//    public int getItemCount() {
+//        return mNews.length;
+//    }
+//
+//   static class ViewHolder extends RecyclerView.ViewHolder {
+//
+//    @BindView(R.id.recycler_view)
+//    TextView textView;
+//
+//    ViewHolder(View v) {
+//        super(v);
+//        ButterKnife.bind(this, v);
+//    }
+//}
+//}
