@@ -10,10 +10,10 @@ import retrofit2.http.POST;
 public interface TutService {
 
     @GET("rss/economics.rss")
-    List<TutNews> getNews();
+    List<TutNews> getEconomicsNews();
 
     @GET("rss/society.rss")
-    List<TutNews> getEconomicsNews();
+    List<TutNews> getSocietyNews();
 
     @GET("rss/world.rss")
     List <TutNews> getWorldNews();
