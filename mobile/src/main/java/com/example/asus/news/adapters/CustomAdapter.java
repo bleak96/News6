@@ -1,25 +1,20 @@
 package com.example.asus.news.adapters;
-
-import android.content.Context;
-import android.graphics.Movie;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutNews;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
-    private ArrayList<TutNews> newsList;
+    private List<TutNews> newsList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.news_title) TextView title;
@@ -30,6 +25,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         ViewHolder(View v) {
             super(v);
+                ButterKnife.bind(this,v);
 //            title = (TextView) v.findViewById(R.id.news_title);
 //            description = (TextView) v.findViewById(R.id.news_description);
 //            link = (TextView) v.findViewById(R.id.news_link);
@@ -37,7 +33,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         }
     }
 
-    public CustomAdapter(ArrayList<TutNews> newsList) {
+    public CustomAdapter(List<TutNews> newsList) {
         this.newsList = newsList;
     }
 
