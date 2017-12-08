@@ -1,17 +1,39 @@
 package com.example.asus.news.fragments;
 
-import android.support.v4.app.Fragment;
+import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import com.example.asus.news.adapters.CultureAdapter;
+import com.example.asus.news.models.TutNews;
 
-import com.example.asus.news.R;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CultureFragment extends Fragment {
+public class CultureFragment extends RecyclerViewCustomFragment {
+    private CultureAdapter adapter;
+
+    public static CultureFragment newInstance() {
+        Bundle args = new Bundle();
+        CultureFragment fragment = new CultureFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.list_item, container, false);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        List<TutNews> tutNewsList = new ArrayList<>();
+        for (int i=0;i<100;i++){
+            tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i),i));
+        }
+        adapter = new CultureAdapter(tutNewsList);
     }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setAdapter(adapter);
+    }
+
 }

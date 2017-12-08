@@ -3,11 +3,15 @@ package com.example.asus.news.models;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Root(name = "item")
 public class TutNews {
 
     @Element(name = "title")
     private String title;
+
 
     private static final int NO_IMAGE_PROVIDED = -1;
     @Element(name = "description")
@@ -18,6 +22,15 @@ public class TutNews {
 
     @Element(name="pubDate")
     private int pubDate;
+
+
+    public TutNews (String mTitle,int mDescription,String mLink,int mPubDate) {
+        title=mTitle;
+        description=mDescription;
+        link=mLink;
+        pubDate=mPubDate;
+    }
+
 
 
 

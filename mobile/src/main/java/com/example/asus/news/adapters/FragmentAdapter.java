@@ -36,13 +36,13 @@ public class FragmentAdapter extends FragmentPagerAdapter {
             case FRAGMENT_ECONOMICS:
                 return EconomicsFragment.newInstance();
             case FRAGMENT_SOCIETY:
-                return new SocietyFragment();
+                return SocietyFragment.newInstance();
             case FRAGMENT_WORLD:
-                return new WorldFragment();
+               return WorldFragment.newInstance();
             case FRAGMENT_CULTURE:
-                return new CultureFragment();
+                return CultureFragment.newInstance();
             case FRAGMENT_ACCIDENTS:
-                return new AccidentsFragment();
+                return AccidentsFragment.newInstance();
             default:
                 return null;
         }

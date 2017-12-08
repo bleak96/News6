@@ -1,17 +1,40 @@
 package com.example.asus.news.fragments;
 
-import android.support.v4.app.Fragment;
+import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import com.example.asus.news.adapters.SocietyAdapter;
+import com.example.asus.news.models.TutNews;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.example.asus.news.R;
+public class SocietyFragment extends RecyclerViewCustomFragment {
 
-public class SocietyFragment extends Fragment {
+    private SocietyAdapter adapter;
+
+    public static SocietyFragment newInstance() {
+        Bundle args = new Bundle();
+        SocietyFragment fragment = new SocietyFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.list_item, container, false);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        List <TutNews> tutNewsList = new ArrayList<>();
+        for (int i=0;i<100;i++){
+            tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i),i));
+        }
+        adapter = new SocietyAdapter(tutNewsList);
     }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setAdapter(adapter);
+    }
+
+
 }

@@ -1,22 +1,16 @@
 package com.example.asus.news.fragments;
 
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-
-import com.example.asus.news.R;
-import com.example.asus.news.adapters.CustomAdapter;
+import com.example.asus.news.adapters.EconomicsAdapter;
 import com.example.asus.news.models.TutNews;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class EconomicsFragment extends RecyclerViewCustomFragment {
 
-    private CustomAdapter adapter;
+    private EconomicsAdapter adapter;
 
     public static EconomicsFragment newInstance() {
         Bundle args = new Bundle();
@@ -29,10 +23,10 @@ public class EconomicsFragment extends RecyclerViewCustomFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         List<TutNews> tutNewsList = new ArrayList<>();
-        for(int i=0; i<100; i++) {
-            tutNewsList.add(new TutNews());
+        for(int i=0; i<10; i++) {
+            tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i)+"hi",i));
         }
-        adapter = new CustomAdapter(tutNewsList);
+        adapter = new EconomicsAdapter(tutNewsList);
     }
 
     @Override
