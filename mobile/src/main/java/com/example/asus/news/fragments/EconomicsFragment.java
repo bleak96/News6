@@ -14,16 +14,9 @@ import com.example.asus.news.models.TutNews;
 import java.util.ArrayList;
 
 public class EconomicsFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.list_item, container, false);
-        ArrayList<TutNews> news = new ArrayList<TutNews>();
-
-
-
-
-
-
-        return rootView;
+        return inflater.inflate(R.layout.list_item, container, false);
     }
 }

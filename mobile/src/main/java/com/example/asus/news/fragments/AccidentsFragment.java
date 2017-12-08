@@ -8,16 +8,10 @@ import android.view.ViewGroup;
 
 import com.example.asus.news.R;
 
-/**
- * Created by ASUS on 07.12.2017.
- */
-
 public class AccidentsFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.list_item, container, false);
-
-
-        return rootView;
+        return inflater.inflate(R.layout.list_item, container, false);
     }
 }

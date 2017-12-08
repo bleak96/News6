@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.asus.news"
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -21,8 +21,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
+    implementation "com.android.support:design:${supportLibVersion}"
 
     implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.android.support:support-v4:26.1.0'
@@ -33,13 +33,4 @@ dependencies {
         exclude group: 'stax', module: 'stax-api'
         exclude group: 'stax', module: 'stax'
     }
-    //    exclude module: 'stax'
-    //    exclude module: 'stax-api'
-    //    exclude module: 'xpp3'
-    //}
-    //implementation('org.simpleframework:simple-xml:2.7.+'){
-    //    exclude module: 'stax'
-    //    exclude module: 'stax-api'
-    //    exclude module: 'xpp3'
-    //}
 }
