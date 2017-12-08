@@ -34,7 +34,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case FRAGMENT_ECONOMICS:
-                return new EconomicsFragment();
+                return EconomicsFragment.newInstance();
             case FRAGMENT_SOCIETY:
                 return new SocietyFragment();
             case FRAGMENT_WORLD:

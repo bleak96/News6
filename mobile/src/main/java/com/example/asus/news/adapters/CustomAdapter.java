@@ -1,4 +1,5 @@
 package com.example.asus.news.adapters;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,29 +15,12 @@ import butterknife.ButterKnife;
 
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+
     private List<TutNews> newsList;
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.news_title) TextView title;
-        @BindView(R.id.news_description) TextView description;
-        @BindView(R.id.news_link) TextView link;
-        @BindView(R.id.news_date) TextView date;
-//        TextView title, description, link, date;
-
-        ViewHolder(View v) {
-            super(v);
-                ButterKnife.bind(this,v);
-//            title = (TextView) v.findViewById(R.id.news_title);
-//            description = (TextView) v.findViewById(R.id.news_description);
-//            link = (TextView) v.findViewById(R.id.news_link);
-//            date = (TextView) v.findViewById(R.id.news_date);
-        }
-    }
-
-    public CustomAdapter(List<TutNews> newsList) {
+    public CustomAdapter(@Nullable List<TutNews> newsList) {
         this.newsList = newsList;
     }
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -45,7 +29,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
         TutNews news = newsList.get(position);
         viewHolder.title.setText(news.getTitle());
         viewHolder.description.setText(news.getDescription());
@@ -55,23 +38,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return newsList != null ? newsList.size() : 0;
     }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.news_title) TextView title;
+        @BindView(R.id.news_description) TextView description;
+        @BindView(R.id.news_link) TextView link;
+        @BindView(R.id.news_date) TextView date;
+
+        ViewHolder(View v) {
+            super(v);
+            ButterKnife.bind(this,v);
+        }
+    }
+
 }
-//
-//   @Override
-//    public int getItemCount() {
-//        return mNews.length;
-//    }
-//
-//   static class ViewHolder extends RecyclerView.ViewHolder {
-//
-//    @BindView(R.id.recycler_view)
-//    TextView textView;
-//
-//    ViewHolder(View v) {
-//        super(v);
-//        ButterKnife.bind(this, v);
-//    }
-//}
-//}

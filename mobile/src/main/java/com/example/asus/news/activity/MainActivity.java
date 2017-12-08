@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            RecyclerViewCustomFragment fragment = new RecyclerViewCustomFragment();
-
+            // TODO: 9.12.17
         }
         ButterKnife.bind(this);
 
