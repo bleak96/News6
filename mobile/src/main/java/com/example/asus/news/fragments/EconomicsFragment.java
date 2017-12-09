@@ -3,14 +3,15 @@ package com.example.asus.news.fragments;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
-import com.example.asus.news.adapters.EconomicsAdapter;
+
+import com.example.asus.news.adapters.BaseAdapter;
 import com.example.asus.news.models.TutNews;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EconomicsFragment extends RecyclerViewCustomFragment {
 
-    private EconomicsAdapter adapter;
+    private BaseAdapter adapter;
 
     public static EconomicsFragment newInstance() {
         Bundle args = new Bundle();
@@ -26,7 +27,7 @@ public class EconomicsFragment extends RecyclerViewCustomFragment {
         for(int i=0; i<10; i++) {
             tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i)+"hi",i));
         }
-        adapter = new EconomicsAdapter(tutNewsList);
+        adapter = new BaseAdapter(tutNewsList);
     }
 
     @Override

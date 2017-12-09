@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.asus.news.R;
 import com.example.asus.news.adapters.FragmentAdapter;
+import com.example.asus.news.fragments.EconomicsFragment;
 import com.example.asus.news.fragments.RecyclerViewCustomFragment;
 
 import butterknife.BindView;

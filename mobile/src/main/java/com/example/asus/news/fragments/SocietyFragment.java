@@ -3,14 +3,15 @@ package com.example.asus.news.fragments;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
-import com.example.asus.news.adapters.SocietyAdapter;
+
+import com.example.asus.news.adapters.BaseAdapter;
 import com.example.asus.news.models.TutNews;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SocietyFragment extends RecyclerViewCustomFragment {
 
-    private SocietyAdapter adapter;
+    private BaseAdapter adapter;
 
     public static SocietyFragment newInstance() {
         Bundle args = new Bundle();
@@ -26,7 +27,7 @@ public class SocietyFragment extends RecyclerViewCustomFragment {
         for (int i=0;i<100;i++){
             tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i),i));
         }
-        adapter = new SocietyAdapter(tutNewsList);
+        adapter = new BaseAdapter(tutNewsList);
     }
 
 
@@ -35,6 +36,5 @@ public class SocietyFragment extends RecyclerViewCustomFragment {
         super.onViewCreated(view, savedInstanceState);
         setAdapter(adapter);
     }
-
 
 }

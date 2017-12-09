@@ -6,7 +6,6 @@ import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import com.example.asus.news.R;
 import com.example.asus.news.fragments.AccidentsFragment;
 import com.example.asus.news.fragments.CultureFragment;
