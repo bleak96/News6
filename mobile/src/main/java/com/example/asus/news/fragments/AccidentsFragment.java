@@ -2,8 +2,13 @@ package com.example.asus.news.fragments;
 
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.example.asus.news.R;
 import com.example.asus.news.adapters.BaseAdapter;
 import com.example.asus.news.models.TutNews;
 
@@ -28,6 +33,12 @@ public class AccidentsFragment extends RecyclerViewCustomFragment {
             tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i),i));
         }
         adapter = new BaseAdapter(tutNewsList);
+
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.recycler_view,container,false);
+
     }
 
 

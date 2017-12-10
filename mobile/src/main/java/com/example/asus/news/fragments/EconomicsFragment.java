@@ -3,7 +3,6 @@ package com.example.asus.news.fragments;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.asus.news.adapters.BaseAdapter;
 import com.example.asus.news.models.TutNews;
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ public class EconomicsFragment extends RecyclerViewCustomFragment {
             tutNewsList.add(new TutNews(Integer.toString(i),i,Integer.toString(i)+"hi",i));
         }
         adapter = new BaseAdapter(tutNewsList);
+
     }
 
     @Override
