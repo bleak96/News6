@@ -13,7 +13,6 @@ import com.example.asus.news.fragments.EconomicsFragment;
 import com.example.asus.news.fragments.SocietyFragment;
 import com.example.asus.news.fragments.WorldFragment;
 
-
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     private static final int FRAGMENT_ECONOMICS = 0;

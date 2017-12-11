@@ -5,21 +5,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutNews;
 
-import java.util.Date;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder>{
-
+public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
 
     private List<TutNews> newsList;
+
     public BaseAdapter(@Nullable List<TutNews> newsList) {
         this.newsList = newsList;
     }
@@ -34,7 +34,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder>{
         TutNews news = newsList.get(position);
 
         viewHolder.title.setText(news.getTitle());
-//        viewHolder.description.setImageResource(news.getDescription());
+
         viewHolder.link.setText(news.getLink());
 
         viewHolder.date.setText(news.getPubDate());
@@ -49,7 +49,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder>{
 
         @BindView(R.id.news_title)
         TextView title;
-//        @BindView(R.id.news_description)
+        //        @BindView(R.id.news_description)
 //        ImageView description;
         @BindView(R.id.news_link)
         TextView link;
@@ -58,7 +58,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder>{
 
         ViewHolder(View v) {
             super(v);
-            ButterKnife.bind(this,v);
+            ButterKnife.bind(this, v);
         }
     }
 
