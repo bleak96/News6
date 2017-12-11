@@ -13,20 +13,20 @@ public class TutNews {
     private String title;
 
 
-    private static final int NO_IMAGE_PROVIDED = -1;
-    @Element(name = "description")
-    private int description=NO_IMAGE_PROVIDED;
+//    private static final int NO_IMAGE_PROVIDED = -1;
+//    @Element(name = "description")
+//    private int description=NO_IMAGE_PROVIDED;
 
     @Element(name = "link")
     private String link;
 
     @Element(name="pubDate")
-    private int pubDate;
+    private String pubDate;
+//,int mDescription,
 
-
-    public TutNews (String mTitle,int mDescription,String mLink,int mPubDate) {
+    public TutNews (String mTitle,String mLink,String mPubDate) {
         title=mTitle;
-        description=mDescription;
+//        description=mDescription;
         link=mLink;
         pubDate=mPubDate;
     }
@@ -43,13 +43,13 @@ public class TutNews {
         this.title = title;
     }
 
-    public int getDescription() {
-        return description;
-    }
-
-    public void setDescription(int description) {
-        this.description = description;
-    }
+//    public int getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(int description) {
+//        this.description = description;
+//    }
 
     public String getLink() {
         return link;
@@ -59,14 +59,14 @@ public class TutNews {
         this.link = link;
     }
 
-    public int getPubDate() {
+    public String getPubDate() {
         return pubDate;
     }
-    public void setPubDate(int pubDate) {
+    public void setPubDate(String pubDate) {
         this.pubDate=pubDate;
     }
-    public boolean hasImage() {
-        return description != NO_IMAGE_PROVIDED;
-    }
+//    public boolean hasImage() {
+//        return description != NO_IMAGE_PROVIDED;
+//    }
 
 }

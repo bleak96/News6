@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         ButterKnife.bind(this);
-
-        TabLayout tabLayout= (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
+//
+//        TabLayout tabLayout= (TabLayout) findViewById(R.id.tabs);
+//        tabLayout.setupWithViewPager(viewPager);
         initViewPager();
 
     }
