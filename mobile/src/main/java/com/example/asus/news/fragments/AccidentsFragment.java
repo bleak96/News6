@@ -35,5 +35,4 @@ public class AccidentsFragment extends RecyclerViewCustomFragment {
         setAdapter(adapter);
     }
 
-
 }

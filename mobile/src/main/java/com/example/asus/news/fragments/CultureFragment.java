@@ -3,10 +3,8 @@ package com.example.asus.news.fragments;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.asus.news.adapters.BaseAdapter;
 import com.example.asus.news.models.TutNews;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +33,7 @@ public class CultureFragment extends RecyclerViewCustomFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setAdapter(adapter);
+
     }
 
 }

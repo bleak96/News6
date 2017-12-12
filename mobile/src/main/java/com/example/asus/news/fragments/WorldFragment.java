@@ -24,7 +24,7 @@ public class WorldFragment extends RecyclerViewCustomFragment {
         super.onCreate(savedInstanceState);
         List<TutNews> tutNewsList = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            tutNewsList.add(new TutNews(Integer.toString(i), Integer.toString(i), Integer.toString(i)));
+            tutNewsList.add(new TutNews(Integer.toString(i) + "Zagolovok novosti", Integer.toString(i) + "Dlinnoe opisanie novosti", Integer.toString(i) + "23.07.1998"));
         }
         adapter = new BaseAdapter(tutNewsList);
     }

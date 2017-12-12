@@ -4,13 +4,13 @@ import com.example.asus.news.models.TutNews;
 
 import java.util.List;
 
+import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 
 public interface TutService {
 
     @GET("rss/economics.rss")
-    List<TutNews> getEconomicsNews();
+    Call<TutNews> getEconomicsNews();
 
     @GET("rss/society.rss")
     List<TutNews> getSocietyNews();

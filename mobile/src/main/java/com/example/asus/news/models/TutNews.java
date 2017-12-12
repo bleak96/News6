@@ -1,21 +1,23 @@
 package com.example.asus.news.models;
 
 import org.simpleframework.xml.Element;
+
 import org.simpleframework.xml.Root;
 
-@Root(name = "item")
+
+@Root(name = "item", strict = false)
 public class TutNews {
 
     @Element(name = "title")
+
     private String title;
 
-    //  @Element(name = "description") на будущее
-    //  private int description;
-
     @Element(name = "link")
+
     private String link;
 
     @Element(name = "pubDate")
+
     private String pubDate; //Пока что String
 
 

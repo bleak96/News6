@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.example.asus.news.R;
 
-import butterknife.ButterKnife;
 
 public class RecyclerViewCustomFragment extends Fragment {
 
@@ -26,16 +25,14 @@ public class RecyclerViewCustomFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-
         return view;
-
 
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //ButterKnife.bind(this, view);
+
 
     }
 

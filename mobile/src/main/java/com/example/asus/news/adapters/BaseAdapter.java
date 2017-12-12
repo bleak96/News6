@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 
 public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
-
     private List<TutNews> newsList;
 
     public BaseAdapter(@Nullable List<TutNews> newsList) {
@@ -49,8 +48,6 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
         @BindView(R.id.news_title)
         TextView title;
-        //        @BindView(R.id.news_description)
-//        ImageView description;
         @BindView(R.id.news_link)
         TextView link;
         @BindView(R.id.news_date)
@@ -60,6 +57,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
             super(v);
             ButterKnife.bind(this, v);
         }
+
     }
 
 }
