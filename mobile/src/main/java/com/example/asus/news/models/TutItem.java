@@ -56,4 +56,15 @@ public class TutItem {
     public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
+
+    @Override
+    public String toString() {
+        return "TutItem{" +
+                "title='" + title + '\'' +
+                ", link='" + link + '\'' +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", pubDate='" + pubDate + '\'' +
+                '}';
+    }
 }
