@@ -2,25 +2,18 @@ package com.example.asus.news.models;
 
 import org.simpleframework.xml.Element;
 
-import org.simpleframework.xml.Root;
-
-@Root(name = "item", strict = false)
-public class TutNews {
+public class TutItem {
 
     @Element(name = "title")
     private String title;
-
     @Element(name = "link")
     private String link;
-
+    @Element(name = "description")
+    private String description;
+    @Element(name = "category")
+    private String category;
     @Element(name = "pubDate")
-    private String pubDate; //Пока что String
-
-    public TutNews(String mTitle, String mLink, String mPubDate) {
-        title = mTitle;
-        link = mLink;
-        pubDate = mPubDate;
-    }
+    private String pubDate;
 
     public String getTitle() {
         return title;
@@ -38,6 +31,22 @@ public class TutNews {
         this.link = link;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public String getPubDate() {
         return pubDate;
     }
@@ -45,5 +54,4 @@ public class TutNews {
     public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
-
 }

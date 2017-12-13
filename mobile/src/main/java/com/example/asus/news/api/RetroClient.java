@@ -8,7 +8,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class RetroClient {
 
-    private static final String TUT_URL = "https://news.tut.by";
+    private static final String TUT_URL = "https://news.tut.by/";
 
     private static Retrofit getRetrofitInstance() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -26,7 +26,5 @@ public class RetroClient {
 
     public static TutService getTutNews() {
         return getRetrofitInstance().create(TutService.class);
-
     }
-
 }

@@ -1,5 +1,6 @@
 package com.example.asus.news.api;
 
+import com.example.asus.news.models.Rss;
 import com.example.asus.news.models.TutNews;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import retrofit2.http.GET;
 public interface TutService {
 
     @GET("rss/economics.rss")
-    Call<TutNews> getEconomicsNews();
+    Call<Rss> getEconomicsNews();
 
     @GET("rss/society.rss")
     List<TutNews> getSocietyNews();
