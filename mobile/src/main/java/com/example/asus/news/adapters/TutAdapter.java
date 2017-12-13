@@ -31,6 +31,9 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
         holder.title.setText(item.getTitle());
         holder.description.setText(item.getDescription());
         holder.date.setText(item.getPubDate());
+        holder.link.setText(item.getLink());
+
+
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
