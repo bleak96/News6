@@ -1,63 +1,65 @@
 package com.example.asus.news.adapters;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.asus.news.R;
-import com.example.asus.news.models.TutNews;
-
+import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+abstract class BaseAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
-public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
+    private Context context;
+    private List<T> list;
+    private LayoutInflater inflater;
 
-    private List<TutNews> newsList;
+    public abstract void onBindViewHolder(VH holder, int position, T item);
 
-    public BaseAdapter(@Nullable List<TutNews> newsList) {
-        this.newsList = newsList;
+    BaseAdapter(Context context, @Nullable List<T> list) {
+        this.context = context;
+        if (null != list) {
+            this.list = list;
+        } else {
+            this.list = new ArrayList<>();
+        }
+    }
+
+    public void addAll(List<T> elements) {
+        list.addAll(elements);
+        notifyDataSetChanged();
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false));
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        TutNews news = newsList.get(position);
-
-        viewHolder.title.setText(news.getTitle());
-
-        viewHolder.link.setText(news.getLink());
-
-        viewHolder.date.setText(news.getPubDate());
+    public final void onBindViewHolder(VH holder, int position) {
+        onBindViewHolder(holder, position, getItem(position));
     }
 
     @Override
     public int getItemCount() {
-        return newsList != null ? newsList.size() : 0;
+        return null != list ? list.size() : 0;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    @Nullable
+    public T getItem(int position) {
+        return null != list ? list.get(position) : null;
+    }
 
-        @BindView(R.id.news_title)
-        TextView title;
-        @BindView(R.id.news_link)
-        TextView link;
-        @BindView(R.id.news_date)
-        TextView date;
+    @Override
+    public long getItemId(int position) {
+        return list.get(position).hashCode();
+    }
 
-        ViewHolder(View v) {
-            super(v);
-            ButterKnife.bind(this, v);
+    protected View inflate(ViewGroup parent, int layoutId) {
+        return getInflater(context).inflate(layoutId, parent, false);
+    }
+
+    protected LayoutInflater getInflater(Context context) {
+        if (inflater == null) {
+            inflater = LayoutInflater.from(context);
         }
-
+        return inflater;
     }
-
 }

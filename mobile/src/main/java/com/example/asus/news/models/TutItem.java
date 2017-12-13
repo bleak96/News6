@@ -1,7 +1,9 @@
 package com.example.asus.news.models;
 
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
+@Root(name = "item", strict = false)
 public class TutItem {
 
     @Element(name = "title")

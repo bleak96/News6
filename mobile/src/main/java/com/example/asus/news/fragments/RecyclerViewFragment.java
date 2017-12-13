@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.asus.news.R;
 
-public class RecyclerViewCustomFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;

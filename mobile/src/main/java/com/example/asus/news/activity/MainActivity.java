@@ -16,17 +16,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
-        if (savedInstanceState == null) {
-
-        }
         ButterKnife.bind(this);
+
         initViewPager();
-
     }
-
 
     private void initViewPager() {
         FragmentAdapter pagerAdapter = new FragmentAdapter(this, getSupportFragmentManager());

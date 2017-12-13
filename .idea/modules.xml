@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\user\AndroidStudioProjects\News6\News.iml" filepath="C:\Users\user\AndroidStudioProjects\News6\News.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/News6.iml" filepath="$PROJECT_DIR$/.idea/News6.iml" />
-      <module fileurl="file://C:\Users\ASUS\AndroidProjects\News\.idea\News6.iml" filepath="C:\Users\ASUS\AndroidProjects\News\.idea\News6.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
-      <module fileurl="file://C:\Users\user\AndroidStudioProjects\News6\mobile\mobile.iml" filepath="C:\Users\user\AndroidStudioProjects\News6\mobile\mobile.iml" />
     </modules>
   </component>
 </project>
