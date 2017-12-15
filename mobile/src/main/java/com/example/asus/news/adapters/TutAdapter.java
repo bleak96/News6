@@ -21,18 +21,21 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
         super(context, list);
     }
 
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(inflate(parent, R.layout.item_news));
     }
 
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position, TutItem item) {
-        holder.title.setText(item.getTitle());
-        holder.description.setText(item.getDescription());
-        holder.date.setText(item.getPubDate());
-        holder.link.setText(item.getLink());
 
+        holder.title.setText(item.getTitle());
+        holder.description.setText(FindS2(item.getDescription()));
+//       Glide.with(holder.description.getContext()).load(item.getDescription()).into(holder.description);
+//       holder.description.setImageResource(Glide.with().load(item.getDescription()));
+        holder.date.setText(item.getPubDate());
 
     }
 
@@ -40,12 +43,11 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
 
         @BindView(R.id.tv_news_title)
         protected TextView title;
+
         @BindView(R.id.tv_news_description)
         protected TextView description;
         @BindView(R.id.tv_news_date)
         protected TextView date;
-        @BindView(R.id.tv_news_link)
-        protected TextView link;
 
         ViewHolder(View v) {
             super(v);

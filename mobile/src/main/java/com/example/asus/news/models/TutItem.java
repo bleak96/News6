@@ -12,8 +12,6 @@ public class TutItem {
     private String link;
     @Element(name = "description")
     private String description;
-    @Element(name = "category")
-    private String category;
     @Element(name = "pubDate")
     private String pubDate;
 
@@ -41,13 +39,7 @@ public class TutItem {
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
-    }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public String getPubDate() {
         return pubDate;
@@ -63,7 +55,6 @@ public class TutItem {
                 "title='" + title + '\'' +
                 ", link='" + link + '\'' +
                 ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
                 ", pubDate='" + pubDate + '\'' +
                 '}';
     }

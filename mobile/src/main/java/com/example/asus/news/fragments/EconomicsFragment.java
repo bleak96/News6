@@ -1,20 +1,13 @@
 package com.example.asus.news.fragments;
 
-import android.content.Intent;
-import android.net.Uri;
+
 import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
 
-
-import butterknife.OnClick;
 import retrofit2.Callback;
 
-import com.example.asus.news.R;
-import com.example.asus.news.adapters.TouchListener;
 import com.example.asus.news.adapters.TutAdapter;
 import com.example.asus.news.api.RetroClient;
 import com.example.asus.news.api.TutService;
@@ -22,7 +15,6 @@ import com.example.asus.news.models.Rss;
 import com.example.asus.news.models.TutChannel;
 import com.example.asus.news.models.TutItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -57,8 +49,6 @@ public class EconomicsFragment extends RecyclerViewFragment implements Callback<
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setAdapter(adapter);
-
-
 
 
     }
