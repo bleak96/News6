@@ -1,13 +1,16 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="?attr/selectableItemBackground">
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    android:layout_margin="8dp">
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_news_description"
-
         android:layout_width="72dp"
         android:layout_height="50dp"
         android:layout_margin="8dp" />
@@ -15,7 +18,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="8dp">
 
         <TextView
             android:id="@+id/tv_news_title"
@@ -29,6 +33,7 @@
             android:id="@+id/tv_news_date"
             android:layout_width="match_parent"
             android:layout_height="17dp"
+            android:layout_marginTop="4dp"
             android:text="@string/NewsPubDate"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="12sp" />

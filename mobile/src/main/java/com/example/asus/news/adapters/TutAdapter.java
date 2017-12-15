@@ -5,8 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutItem;
 
@@ -27,14 +29,13 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
         return new ViewHolder(inflate(parent, R.layout.item_news));
     }
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position, TutItem item) {
 
         holder.title.setText(item.getTitle());
-        holder.description.setText(FindS2(item.getDescription()));
-//       Glide.with(holder.description.getContext()).load(item.getDescription()).into(holder.description);
-//       holder.description.setImageResource(Glide.with().load(item.getDescription()));
+//      holder.description.setText(item.getImageUrl());
+        Glide.with(holder.description.getContext()).load(item.getImageUrl()).into(holder.description);
+//      holder.description.setImageResource(Glide.with().load(item.getDescription()));
         holder.date.setText(item.getPubDate());
 
     }
@@ -43,9 +44,8 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
 
         @BindView(R.id.tv_news_title)
         protected TextView title;
-
         @BindView(R.id.tv_news_description)
-        protected TextView description;
+        protected ImageView description;
         @BindView(R.id.tv_news_date)
         protected TextView date;
 

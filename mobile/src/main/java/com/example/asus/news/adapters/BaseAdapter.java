@@ -6,9 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-
-import com.example.asus.news.models.TutItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +16,7 @@ abstract class BaseAdapter<T, VH extends RecyclerView.ViewHolder> extends Recycl
     private List<T> list;
     private LayoutInflater inflater;
 
-
-
     public abstract void onBindViewHolder(VH holder, int position, T item);
-
 
     BaseAdapter(Context context, @Nullable List<T> list) {
         this.context = context;
@@ -67,17 +61,6 @@ abstract class BaseAdapter<T, VH extends RecyclerView.ViewHolder> extends Recycl
             inflater = LayoutInflater.from(context);
         }
         return inflater;
-    }
-
-    public String FindS2(String item) {
-        String answer = item;
-        int begin = answer.indexOf("\"https");
-        int end = answer.indexOf(".jpg")+4;
-        String result = "";
-        for (int i = begin; i < end +1; i++){
-            result += answer.charAt(i);
-        }
-        return result;
     }
 
 }

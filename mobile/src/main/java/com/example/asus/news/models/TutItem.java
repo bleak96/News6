@@ -32,13 +32,35 @@ public class TutItem {
     }
 
     public String getDescription() {
+
         return description;
     }
+
+    public String getImageUrl() {
+
+        int begin = getDescription().indexOf("\"https");
+        int end = getDescription().indexOf(".jpg") + 4;
+        String result = "";
+        for (int i = begin; i < end + 1; i++) {
+            result += getDescription().charAt(i);
+        }
+        return result;
+    }
+//    public String getShortDescription() { //for future short description(if required)
+//
+//        int begin = getDescription().indexOf("\"https");
+//        int end = getDescription().indexOf(".jpg")+4;
+//        String result = "";
+//        for (int i = begin; i < end +1; i++){
+//            result +=getDescription().charAt(i);
+//        }
+//        return result;
+//    }
+//
 
     public void setDescription(String description) {
         this.description = description;
     }
-
 
 
     public String getPubDate() {
