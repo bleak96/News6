@@ -12,10 +12,13 @@ import com.bumptech.glide.Glide;
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutItem;
 
+import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
 
@@ -23,6 +26,10 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
         super(context, list);
     }
 
+    private String formatTime(Date dateObject) {
+        SimpleDateFormat timeFormat = new SimpleDateFormat("EEE 'в' HH:mm");
+        return timeFormat.format(dateObject);
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,10 +40,13 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position, TutItem item) {
 
         holder.title.setText(item.getTitle());
-//      holder.description.setText(item.getImageUrl());
+
         Glide.with(holder.description.getContext()).load(item.getImageUrl()).into(holder.description);
-//      holder.description.setImageResource(Glide.with().load(item.getDescription()));
-        holder.date.setText(item.getPubDate());
+
+        Date dateObject = new Date(item.getPubDate());
+        String formattedTime = formatTime(dateObject);
+        holder.date.setText(formattedTime);
+
 
     }
 

@@ -22,7 +22,6 @@ public class TutChannel {
     private String description;
 
 
-
     @Element(name = "pubDate")
     private String pubDate;
 
@@ -55,7 +54,6 @@ public class TutChannel {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public String getPubDate() {
         return pubDate;

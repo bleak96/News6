@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ButterKnife.bind(this);
         initViewPager();
     }
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViewPager() {
         FragmentAdapter pagerAdapter = new FragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
+
     }
 
     @Override

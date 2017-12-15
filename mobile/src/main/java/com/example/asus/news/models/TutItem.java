@@ -32,7 +32,6 @@ public class TutItem {
     }
 
     public String getDescription() {
-
         return description;
     }
 
@@ -46,6 +45,7 @@ public class TutItem {
         }
         return result;
     }
+
 //    public String getShortDescription() { //for future short description(if required)
 //
 //        int begin = getDescription().indexOf("\"https");
@@ -61,7 +61,6 @@ public class TutItem {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public String getPubDate() {
         return pubDate;

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="TabLayout" parent="Widget.Design.TabLayout"> <!-- style for text in tabs -->
+        <item name="tabTextAppearance">@style/TabText</item>
+    </style>
+
+    <style name="TabText" parent="TextAppearance.Design.Tab"> <!-- style for textSize in tabs(textSize) -->
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="SelectableItemBackground"> <!-- style for rippleEffect-->
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="SelectableItemTheme"> <!-- style for color of rippleEffect-->
+        <item name="colorControlHighlight">@color/rippleColor</item>
+    </style>
 
 
 </resources>

@@ -1,6 +1,5 @@
 package com.example.asus.news.fragments;
 
-
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +25,6 @@ public class EconomicsFragment extends RecyclerViewFragment implements Callback<
 
     private TutAdapter adapter;
 
-
     public static EconomicsFragment newInstance() {
         Bundle args = new Bundle();
         EconomicsFragment fragment = new EconomicsFragment();
@@ -41,16 +39,12 @@ public class EconomicsFragment extends RecyclerViewFragment implements Callback<
         TutService tutService = RetroClient.getTutNews();
         Call<Rss> call = tutService.getEconomicsNews();
         call.enqueue(this);
-
-
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setAdapter(adapter);
-
-
     }
 
     @Override
@@ -60,8 +54,6 @@ public class EconomicsFragment extends RecyclerViewFragment implements Callback<
             TutChannel channel = rss.getChannel();
             List<TutItem> items = channel.getItems();
             adapter.addAll(items);
-
-
         }
     }
 

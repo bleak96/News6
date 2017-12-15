@@ -2,14 +2,14 @@
 
     <string name="app_name">News</string>
 
-    <string name="title_fragment_economics">Economics</string>
-    <string name="title_fragment_society">Society</string>
-    <string name="title_fragment_world">World</string>
-    <string name="title_fragment_culture">Culture</string>
-    <string name="title_fragment_accidents">Accidents</string>
+    <string name="title_fragment_economics">Экономика</string>
+    <string name="title_fragment_society">Общество</string>
+    <string name="title_fragment_world">В мире</string>
+    <string name="title_fragment_culture">Культура</string>
+    <string name="title_fragment_accidents">Происшествия</string>
 
-    <string name="NewsTitle">NewsTitle</string>
-    <string name="NewsPubDate">Mon, 11 Dec 2017 19:54:00</string>
-    <string name="NewsDescription">Full Description</string>
+    <string name="NewsTitle">NewsTitle</string> <!-- PlaceHolderString-->
+    <string name="NewsPubDate">Mon, 11 Dec 2017 19:54:00</string> <!-- PlaceHolderString-->
+    <string name="NewsDescription">Full Description</string> <!-- PlaceHolderString-->
 
 </resources>
