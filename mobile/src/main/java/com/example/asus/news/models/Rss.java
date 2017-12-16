@@ -17,3 +17,4 @@ public class Rss {
         this.channel = channel;
     }
 }
+

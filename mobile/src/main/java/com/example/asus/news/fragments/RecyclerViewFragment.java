@@ -1,5 +1,6 @@
 package com.example.asus.news.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -32,19 +33,19 @@ public class RecyclerViewFragment extends Fragment {
 
         recyclerView.addOnItemTouchListener(new TouchListener(getContext(), recyclerView, new OnClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(View view, int position) { // call googletabs on short click
                 TutItem currentItem = ((TutAdapter) adapter).getItem(position);
                 CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder().build();
                 customTabsIntent.launchUrl(getContext(), Uri.parse(currentItem.getLink()));
             }
 
             @Override
-            public void onLongClick(View view, int position) {
-                onClick(view, position);
-//                TutItem currentItem = ((TutAdapter) adapter).getItem(position); на случай если захочу переходить в браузер лонг кликом
-//                Uri itemUri = Uri.parse(currentItem.getLink());
-//                Intent intent = new Intent(Intent.ACTION_VIEW, itemUri);
-//                startActivity(intent);
+            public void onLongClick(View view, int position) { // call browser intent on long click
+                TutItem currentItem = ((TutAdapter) adapter).getItem(position);
+                Uri itemUri = Uri.parse(currentItem.getLink());
+                Intent intent = new Intent(Intent.ACTION_VIEW, itemUri);
+                startActivity(intent);
+                //onClick(view, position); to not copy code( if need same actions as  at onClick)
             }
         }));
         return view;
@@ -65,4 +66,5 @@ public class RecyclerViewFragment extends Fragment {
 
         void onLongClick(View view, int position);
     }
+
 }

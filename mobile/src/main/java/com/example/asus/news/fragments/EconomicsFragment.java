@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 
 import retrofit2.Callback;
-
 import com.example.asus.news.adapters.TutAdapter;
 import com.example.asus.news.api.RetroClient;
 import com.example.asus.news.api.TutService;

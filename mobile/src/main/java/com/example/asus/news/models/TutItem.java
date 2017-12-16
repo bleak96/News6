@@ -38,25 +38,11 @@ public class TutItem {
     public String getImageUrl() {
 
         int begin = getDescription().indexOf("\"https");
-        int end = getDescription().indexOf(".jpg") + 4;
-        String result = "";
-        for (int i = begin; i < end + 1; i++) {
-            result += getDescription().charAt(i);
-        }
+        int end = getDescription().indexOf(".jpg") + 5;
+        String item = getDescription();
+        String result =item.substring(begin,end);
         return result;
     }
-
-//    public String getShortDescription() { //for future short description(if required)
-//
-//        int begin = getDescription().indexOf("\"https");
-//        int end = getDescription().indexOf(".jpg")+4;
-//        String result = "";
-//        for (int i = begin; i < end +1; i++){
-//            result +=getDescription().charAt(i);
-//        }
-//        return result;
-//    }
-//
 
     public void setDescription(String description) {
         this.description = description;
