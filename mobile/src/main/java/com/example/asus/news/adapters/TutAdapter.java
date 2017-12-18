@@ -35,11 +35,11 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position, TutItem item) {
         holder.title.setText(item.getTitle());
-        Glide
-                .with(holder.description.getContext())
-                .load(item.getImageUrl())
-                .into(holder.description);
 
+        Glide.with(holder.description.getContext())
+                .load( item.getImageUrl())
+                .into(holder.description);
+//        holder.description.setText(item.getImageUrl());
         Date dateObject = new Date(item.getPubDate());
         String formattedTime = formatTime(dateObject);
         holder.date.setText(formattedTime);
