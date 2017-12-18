@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.example.asus.news.R;
 import com.example.asus.news.models.TutItem;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -35,9 +38,9 @@ public class TutAdapter extends BaseAdapter<TutItem, TutAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position, TutItem item) {
         holder.title.setText(item.getTitle());
-        Glide
-                .with(holder.description.getContext())
-                .load(item.getImageUrl())
+
+        Glide.with(holder.description.getContext())
+                .load( item.getImageUrl().replace("\"", ""))
                 .into(holder.description);
 
         Date dateObject = new Date(item.getPubDate());
